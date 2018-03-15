@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1032094873596",
+    "firebase_url": "https://charada-2a66a.firebaseio.com",
+    "project_id": "charada-2a66a",
+    "storage_bucket": "charada-2a66a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032094873596:android:c9b49293032bed1c",
+        "android_client_info": {
+          "package_name": "co.edu.unitecnologica.charada"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032094873596-b7acihumi7bgmsr4phparaq34oulau08.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.unitecnologica.charada",
+            "certificate_hash": "8c01745888ae91d7fd62c52cfab57f74f9904a1c"
+          }
+        },
+        {
+          "client_id": "1032094873596-rjf87vcrg2ukrijk4i53co7t36satcp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6CTfGrB32wak5DHJ7BzmqRRwo2rQFLiI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032094873596-rjf87vcrg2ukrijk4i53co7t36satcp9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
