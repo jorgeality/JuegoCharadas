@@ -9,12 +9,12 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="229dp"
-        android:layout_height="68dp"
+        android:layout_height="74dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Danos tu nombre para agregarte a nuestra lista de jugadores"
+        android:text="Danos tu nick para agregarte a nuestra lista de jugadores"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.203" />
 
     <EditText
-        android:id="@+id/botonenviar"
+        android:id="@+id/nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

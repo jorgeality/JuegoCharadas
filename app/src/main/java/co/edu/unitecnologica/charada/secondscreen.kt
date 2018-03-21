@@ -1,6 +1,11 @@
 package co.edu.unitecnologica.charada
 
+import android.content.Context
 import android.content.Intent
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,13 +14,33 @@ import android.text.format.DateUtils
 import kotlinx.android.synthetic.main.activity_secondscreen.*
 import java.util.concurrent.ThreadLocalRandom
 
-class secondscreen : AppCompatActivity() {
+class secondscreen : AppCompatActivity(), SensorEventListener {
     var i: Int = 0
+    val asc = arrayOf("hola","caminar","correr","comer","dormir","saltar","escribir","manejar","nadar","volar")
+    lateinit var sensorManager: SensorManager
+    override fun onSensorChanged(event: SensorEvent?) {
+        if (event!!.values[0] <= 6){
+
+            palabras.setText(asc[rand(0,9)])
+            i +=1
+            cont.setText(i.toString())
+            if( i == 10){
+                next()
+
+            }
+        }
+    }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secondscreen)
 
-        val asc = arrayOf("hola","caminar","correr","comer","dormir","saltar","escribir","manejar","nadar","volar")
+
 
 
         sgt.setOnClickListener {
@@ -27,6 +52,13 @@ class secondscreen : AppCompatActivity() {
 
             }
         }
+
+        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        sensorManager.registerListener(
+                this,
+                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL
+        )
         cronometro()
 
 
