@@ -3,6 +3,7 @@ package co.edu.unitecnologica.charada
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
@@ -19,8 +20,7 @@ class askname : AppCompatActivity() {
 
 
         EnviarNombre()
-        var intent: Intent = Intent(this, secondscreen::class.java)
-        startActivity(intent)
+
 
     }
 
@@ -31,26 +31,27 @@ class askname : AppCompatActivity() {
         if (name.isEmpty()){
             nombre.error = "ingrese un nick por favor !! "
             return
+        }else{
+            val ref = FirebaseDatabase.getInstance().getReference("participantes")
+
+            val id_ejugador = ref.push().key
+            val datos = "0,0,0"
+            val jugador = participante(id_ejugador, name,datos)
+
+
+            ref.child(id_ejugador).setValue(jugador).addOnCompleteListener {
+                Toast.makeText(applicationContext,"Tu nick ha sido guardado",Toast.LENGTH_SHORT).show()
+            }
+            Handler().postDelayed({
+                var intent: Intent = Intent(this, secondscreen::class.java)
+                intent.putExtra("nombre", name)
+                intent.putExtra("id", id_ejugador)
+                startActivity(intent)
+            },2000)
         }
 
-        val ref = FirebaseDatabase.getInstance().getReference("participantes")
 
-        val id_ejugador = ref.push().key
-
-
-        val jugador = participante(id_ejugador, name,0)
-        Toast.makeText(applicationContext,""+jugador.puntuacion ,Toast.LENGTH_SHORT).show()
-
-        ref.child(id_ejugador).setValue(jugador).addOnCompleteListener {
-            Toast.makeText(applicationContext,"Tu nick ha sido guardado",Toast.LENGTH_SHORT).show()
-
-        }
 
     }
-    fun next(){
 
-        var intent: Intent = Intent(this, askname::class.java)
-        startActivity(intent)
-
-    }
 }
