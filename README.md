@@ -9,10 +9,10 @@ Este juego consiste en adivinar palabras a través de las mimicas que realizan l
 
 2. segunda pantalla (breve registro)
 
-img src="https://github.com/jorgeality/JuegoCharadas/blob/master/imagenes/Captura%20de%20pantalla%202018-05-22%20a%20la(s)%201.43.31%20p.%20m..png" />
+<img src="https://github.com/jorgeality/JuegoCharadas/blob/master/imagenes/Captura%20de%20pantalla%202018-05-22%20a%20la(s)%201.43.31%20p.%20m..png" />
 
 3. tercera pantalla (juego como tal)
-img src="https://github.com/jorgeality/JuegoCharadas/blob/master/imagenes/Captura%20de%20pantalla%202018-05-22%20a%20la(s)%201.44.13%20p.%20m..png" />
+<img src="https://github.com/jorgeality/JuegoCharadas/blob/master/imagenes/Captura%20de%20pantalla%202018-05-22%20a%20la(s)%201.44.13%20p.%20m..png" />
 
 4. pantalla final (premio obtenido y estadisticas)
 
